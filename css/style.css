@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,600&display=swap");
+@import url("utility.css");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+:root {
+    --tekins-green: #006400;
+    --tekins-white: #fff;
+    --transition: 0.5s ease-in-out;
+    --transition-1s: 1s ease-in-out;
+}
+body {
+    font-size: 1.6rem;
+    font-family: "Lora", sans-serif;
+}
+.landing-view {
+    height: 100vh;
+    height: 100dvh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/images/background-image-002.webp");
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    overflow: clip;
+}
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+.fixed-nav-bar {
+    background: var(--tekins-white);
+    border-color: var(--tekins-green);
+    transition: all var(--transition-1s);
+}
+nav {
+    height: 8rem;
+}
+.logo {
+    height: 5.9rem;
+    width: 7.9rem;
+}
+.nav-list-items a {
+    transition: all var(--transition-1s);
+}
+.nav-list-items > a:hover, .fixed-nav-bar .nav-list-items a {
+    color: var(--tekins-green);
+}
+.nav-list-items, .responsive-nav-list-items {
+    list-style-type: none;
+}
+.nav-list-items > a, .responsive-nav-list-items > a {
+    text-decoration: none;
+    color: var(--tekins-white);
+}
+.fixed-nav-bar .nav-list-items a:hover {
+    border-bottom: 1px solid var(--tekins-green);
+}
+.nav-list-items:not(:last-child) {
+    padding-right: 1.5em;
+}
+button {
+    all: unset;
+}
+.hamburger-menu {
+    width: 2.3rem;
+    height: 1.7rem;
+}
+.bar {
+    height: 0.2rem;
+    border-radius: 2px;
+    background: var(--tekins-green);
+    transition: all var(--transition);
+}
+.inner-bar {
+    width: 50%;
+    height: 100%;
+}
+.bar:nth-child(1), .bar:nth-child(3) {
+    background: transparent;
+}
+.bar:nth-child(1) > .inner-bar:first-child, .bar:nth-child(3) > .inner-bar:last-child {
+    background: var(--tekins-green);
+    border-radius: 2px;
+}
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(0.75rem) rotate(45deg);
+    background: var(--tekins-green);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-0.75rem) rotate(-45deg);
+    transition: transform var(--transition-1s);
+    background: var(--tekins-green);
+}
+.responsive-nav-list {
+    left: 0;
+    right: 0;
+    top: 100vh;
+    padding: 2.5em 1em;
+    visibility: hidden;
+    background: var(--tekins-white);
+    transition: all var(--transition);
+}
+.show-mobile-navigation {
+    top: 3.75em;
+    visibility: visible;
+}
+.responsive-nav-list-items {
+    height: 3.5rem;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid var(--tekins-green);
+}
+.responsive-nav-list-items a {
+    color: var(--tekins-green);
+}
+.responsive-nav-list-items:active a {
+    transform: scale(1.1);
+}
+.prevent-scrolling {
+    overflow-y: hidden;
+}
+.header-box-shadow {
+    box-shadow: 0rem 0rem 0.85rem rgba(0, 100, 0, 0.25);
+    transition: all var(--transition);
+}
+.hero-section-main, .hero-section {
+    height: 100%;
+}
+.hero-section-text {
+    width: 55%;
+    color: var(--tekins-white);
+    left: 100vw;
+    transition: all 1.75s ease-in-out;
+}
+.animate-hero-section-text {
+    left: 0;
+}
+.hero-section-text-heading span {
+    padding: 0.5rem 0;
+}
+.hero-section-text-heading span:last-child {
+    color: #41b441;
+}
+.hero-section-text-wrapper {
+    margin-top: 1rem;
+    top: 100vh;
+    visibility: hidden;
+    transition: all 2s ease-in-out;
+}
+.animate-hero-section-text-wrapper {
+    top: 0;
+    visibility: visible;
+}
+.hero-section-text-paragraph {
+    padding: 0.5rem 0;
+    line-height: 2.5rem;
+    text-align: justify;
+}
+.hamburger-menu-blur-effect {
+    outline: 9999px solid rgba(0, 0, 0, 0.75);
+    transition: all 5s ease-in-out;
+}
+.home-renovation-section {
+    height: 83vh;
+    gap: 2em;
+}
+.home-renovation-image {
+    width: 60%;
+    height: 100%;
+}
+.home-renovation-image img {
+    border-radius: 5px;
+}
+.home-renovation-text {
+    width: 40%;
+}
+.home-renovation-text p {
+    text-align: justify;
+    padding: 1em 0;
+    line-height: 1.5;
+}
+.home-renovation-text li {
+    list-style-position: inside;
+    padding: 0.8rem 0;
+}
+.home-renovation-text li::before {
+    content: "";
+    margin: -0.6rem;
+    margin: 0.25rem;
+}
+.home-renovation-text li::marker {
+    content: "⌂";
+    font-size: 2rem;
+    color: var(--tekins-green);
+}
+.service-section-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+        "buy-a-home rent-a-home become-an-agent"
+        "extra-security luxury-apartment office-revolution"
+    ;
+    gap: 2em;
+}
+.service-section-card {
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 100, 0, 0.25);
+    border-radius: 5px;
+    gap: 1em;
+    padding: 1em;
+    transition: all var(--transition);
+}
+.service-section-card img:last-child {
+    display: none;
+}
+.service-section-card:hover {
+    background: rgba(0, 100, 0, 0.8);
+    color: var(--tekins-white);
+    box-shadow: none;
+    transform: scale(1.05);
+}
+.service-section-card:hover img:first-child {
+    display: none;
+}
+.service-section-card:hover img:last-child {
+    display: block;
+}
+.service-section-card:first-child {
+    grid-area: buy-a-home;
+}
+.service-section-card:nth-child(2) {
+    grid-area: rent-a-home;
+}
+.service-section-card:nth-child(3) {
+    grid-area: become-an-agent;
+}
+.service-section-card:nth-child(4) {
+    grid-area: extra-security;
+}
+.service-section-card:nth-child(5) {
+    grid-area: luxury-apartment;
+}
+.service-section-card:last-child {
+    grid-area: office-revolution;
+}
+.card-image-wrapper {
+    width: 5rem;
+    aspect-ratio: 1/1;
+}
+.service-section h2 {
+    margin-bottom: 1.5em;
+}
+.company-info {
+    width: 70%;
+}
+.copyright-section {
+    border-top: 1px solid var(--tekins-white);
+    padding-top: 0.5em;
+}
+.company-info-text {
+    width: 80%;
+}
+footer {
+    color: var(--tekins-white);
+    background: #000;
+    padding: 1em 4em;
+}
+@media screen and (max-width: 900px) {
+    .res-d-none {
+        display: none;
+    }
+    .res-d-block {
+        display: block;
+    }
+    .res-d-flex {
+        display: flex;
+    }
+    .res-fd-c {
+        flex-direction: column;
+    }
+    .res-center {
+        display: grid;
+        place-items: center;
+    }
+    .fixed-nav-bar {
+        background: transparent;
+        border-color: none;
+        transition: none;
+    }
+    .res-fixed-nav-bar {
+        background: var(--tekins-white);
+        border-color: var(--tekins-green);
+        transition: all var(--transition-1s);
+    }
+    .fixed-desktop-pad {
+        padding: calc(6rem + 1em) 1em;
+    }
+    .desktop-pad {
+        padding: 1em 1em;
+    }
+    .landing-view {
+        background-position: center;
+        overflow: visible;
+        transition: all var(--transition-1s);
+    }
+    nav {
+        height: 6rem;
+    }
+    .logo {
+        height: 4rem;
+        width: 5.5rem;
+    }
+    .hero-section-text {
+        width: 100%;
+        padding-top: 3.5rem;
+    }
+    .hero-section-text-heading span:last-child {
+        color: cadetblue;
+    }
+    .hero-section-text-paragraph {
+        line-height: 2.6rem;
+        text-align: left;
+    }
+    .home-renovation-section {
+        height: auto;
+    }
+    .home-renovation-image {
+        width: 100%;
+        height: 60%;
+    }
+    .home-renovation-text {
+        width: 100%;
+        margin-top: 1em;
+    }
+    .home-renovation-text p {
+        padding: 0.8rem 0;
+        line-height: 1.7;
+    }
+    .service-section-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "buy-a-home" 
+            "rent-a-home" 
+            "become-an-agent"
+            "extra-security" 
+            "luxury-apartment" 
+            "office-revolution"
+        ;
+        gap: 1em;
+    }
+    .service-section h2 {
+        margin-bottom: 0.7em;
+    }
+    .company-info, .company-location {
+        width: 100%;
+    }
+    .company-info-text {
+        width: 100%;
+        text-align: center;
+    }
+    footer {
+        padding: 1em;
+    }
+    .company-info-text, .company-location h4, .company-location p, .copyright-section {
+        padding-top: 0.5em;
+    }
+    .company-location p {
+        padding-bottom: 0.5em;
+    }
+}
