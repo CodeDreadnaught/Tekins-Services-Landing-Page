@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* outline: 1px solid red; */
 }
 html {
     scroll-behavior: smooth;
@@ -268,6 +267,9 @@ button {
 .company-info-text {
     width: 80%;
 }
+.company-location p {
+    padding-bottom: 0.5em;
+}
 footer {
     color: var(--tekins-white);
     background: #000;
@@ -371,8 +373,5 @@ footer {
     }
     .company-info-text, .company-location h4, .company-location p, .copyright-section {
         padding-top: 0.5em;
-    }
-    .company-location p {
-        padding-bottom: 0.5em;
     }
 }
